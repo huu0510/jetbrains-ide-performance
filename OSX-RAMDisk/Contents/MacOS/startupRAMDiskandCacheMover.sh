@@ -167,11 +167,11 @@ move_brave_cache()
 {
    if [ -d "/Users/${USER}/Library/Caches/BraveSoftware/Brave-Browser" ]; then
       if user_response "${MSG_PROMPT_FOUND}" 'Brave'"${MSG_MOVE_CACHE}" ; then
-         close_app "Google Chrome"
-         /bin/mkdir -p /tmp/Google
-         /bin/mv ~/Library/Caches/BraveSoftware/Brave-Browser/* /tmp/Brave
+         close_app "Brave Browser"
+         /bin/mkdir -p /tmp/Brave
+         /bin/mv ~/Library/Caches/BraveSoftware/* /tmp/Brave
          /bin/mkdir -pv "${USERRAMDISK}"/Brave
-         /bin/mv /tmp/Google/* "${USERRAMDISK}"/Brave
+         /bin/mv /tmp/Brave/* "${USERRAMDISK}"/Brave
          /bin/ln -v -s -f "${USERRAMDISK}"/Brave ~/Library/Caches/BraveSoftware/
          /bin/rm -rf /tmp/Brave
          # and let's create a flag for next run that we moved the cache.
